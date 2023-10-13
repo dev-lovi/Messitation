@@ -1,3 +1,27 @@
+#: import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+
+<ElementCard@MDCard>:
+    radius: "10dp"
+    spacing: "10dp"
+    padding: "10dp"
+    image: " "
+    text: " " 
+    sub_text: " "
+    orientation: "horizontal"
+    ripple_behavior: True
+    on_release: 
+        app.root.transition = RiseInTransition()
+    image: 
+        root.image
+    MDBoxLayout:
+        orientation: "vertical"
+        MDLabel: 
+            text: root.text
+            halign: "center"
+        MDLabel: 
+            sub_text: root.sub_text
+            halign: "center"
+
 <ui>:
     MDScreen:
         name: "pantalla_principal"
@@ -13,10 +37,15 @@
                     padding: "10dp"
 
                     MDLabel:
-                        text: "Titulo de la app"
-                        halign: "center"
-                        pos_hint: {'center_x': 0.0,'center_y': 1}
-                        color: (39, 40, 41)
+                        markup: True
+                        text: "[size=48][b]Messitación[/b][/size]"
+                        halign: "center"  # Adjust the indentation here
+                        pos_hint: {'center_x': 0.0,'center_y': 0.95}
+                        font_color: (39, 40, 41)
 
-            
+            MDGridLayout:
+                cols: 1
+                size_hint: 1, .8
+                padding: ["10dp"]
+                
             
