@@ -5,7 +5,7 @@ from kivy.lang import Builder
 
 class Ui(ScreenManager):
     pass
-    #def build(self):
+    #def build(self): Day 66 freeday
         # Setting theme to my favorite theme
         #self.theme_cls.primary_palette = "DeepPurple"
         #self.audio_files = ["audio1.mp3", "audio2.mp3", "audio3.mp3"]
