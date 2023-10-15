@@ -1,4 +1,7 @@
 #: import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+
 
 <ElementCard@MDCard>:
     radius: "10dp"
@@ -7,7 +10,7 @@
     image: " "
     text: " " 
     sub_text: " "
-    orientation: "horizontal"
+    orientation: "vertical"
     ripple_behavior: True
     on_release: 
         app.root.transition = RiseInTransition()
@@ -19,12 +22,28 @@
             text: root.text
             halign: "center"
         MDLabel: 
-            sub_text: root.sub_text
+            text: root.sub_text
             halign: "center"
+
+<CustomizeScreen@MDBoxLayout>
+    orientation: "vertical"
+    text: ""
+    padding: 100
+    MDLabel:
+        text: root.text
+        halign: "center"
+        pos_hint: {"center_x": 0.5}
+    MDFillRoundFlatButton: 
+        text: "Regresar"
+        pos_hint: {"center_x": 0.5}
+        on_release: 
+            app.root.current = "screen_principal"
+            app.root.transition = SlideTransition(direction= "left")
+
 
 <ui>:
     MDScreen:
-        name: "pantalla_principal"
+        name: "screen_principal"
         md_bg_color: (245,245,245)
         MDBoxLayout:
             orientation: "vertical"
@@ -38,14 +57,24 @@
 
                     MDLabel:
                         markup: True
-                        text: "[size=48][b]Messitación[/b][/size]"
+                        text: "[size=36][b]Messitación[/b][/size]"
                         halign: "center"  # Adjust the indentation here
-                        pos_hint: {'center_x': 0.0,'center_y': 0.95}
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
                         font_color: (39, 40, 41)
 
-            MDGridLayout:
-                cols: 1
+
+            MDBoxLayout:
                 size_hint: 1, .8
-                padding: ["10dp"]
+                padding: ['10dp']
                 
-            
+                ElementCard:
+                    text: 'Messitación 1:'
+                    sub_text: 'Elementos'
+                    font_color: (39, 40, 41)
+                    on_release:
+                        root.current = "screen1"
+
+    MDScreen:        
+        name: "screen1"
+        CustomizeScreen:
+            text: "Pantalla uno"
