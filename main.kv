@@ -63,9 +63,10 @@
                         font_color: (39, 40, 41)
 
 
-            MDBoxLayout:
+            MDGridLayout:
+                cols: 2
                 size_hint: 1, .8
-                padding: ['10dp']
+                padding: ['10dp', '10dp', '10dp', '10dp']
                 
                 ElementCard:
                     text: 'Messitación 1:'
@@ -73,8 +74,32 @@
                     font_color: (39, 40, 41)
                     on_release:
                         root.current = "screen1"
+                
+                ElementCard:
+                    text: 'Messitación 1:'
+                    sub_text: 'Elementos'
+                    font_color: (39, 40, 41)
+                    on_release:
+                        root.current = "screen2"
+                
+                ElementCard:
+                    text: 'Messitación 1:'
+                    sub_text: 'Elementos'
+                    font_color: (39, 40, 41)
+                    on_release:
+                        root.current = "screen3"
 
     MDScreen:        
         name: "screen1"
+        CustomizeScreen:
+            text: "Pantalla uno"
+
+    MDScreen:        
+        name: "screen2"
+        CustomizeScreen:
+            text: "Pantalla uno"
+    
+    MDScreen:        
+        name: "screen3"
         CustomizeScreen:
             text: "Pantalla uno"
