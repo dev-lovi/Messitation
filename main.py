@@ -1,17 +1,22 @@
 #Starting from zero
-from kivy.uix.widget import Widget
+from kivy.app import App
+from kivy.uix.label import Label
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.textinput import TextInput
+from kivy.uix.button import Button
 from kivy.lang import Builder
-from kivymd.app import MDApp
+from kivy.uix.widget import Widget
+
 
 # Designate your kv file
-Builder.load_file('main.kv')
+Builder.load_file('cls.kv')
 
-class MyLayout(Widget):
+class MyGrid(Widget):
     pass
 
-class MyApp(MDApp):
+class cls(App):
     def build(self):
-        return MyLayout()
+        return MyGrid()
     
 if __name__ == '__main__':
-    MyApp().run()
+    cls().run()
