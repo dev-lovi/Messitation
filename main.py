@@ -1,22 +1,23 @@
 #Starting from zero
-from kivy.app import App
-from kivy.uix.label import Label
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button
 from kivy.lang import Builder
+from kivymd.app import MDApp
 from kivy.uix.widget import Widget
+from kivymd.uix.card import MDCard
+from kivymd.uix.screen import MDScreen
+from kivy.uix.screenmanager import ScreenManager
 
 
-# Designate your kv file
-Builder.load_file('cls.kv')
 
-class MyGrid(Widget):
+
+class Ui(ScreenManager):
     pass
 
-class cls(App):
+class cls(MDApp):
     def build(self):
-        return MyGrid()
+        self.theme_cls.theme_style = 'Dark'
+        self.theme_cls.primary_palette = 'Teal'
+        Builder.load_file('cls.kv')
+        return Ui()
     
 if __name__ == '__main__':
     cls().run()

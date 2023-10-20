@@ -1,23 +1,40 @@
-<MyGrid>
 
-    GridLayout:
-        cols: 1
-        size: root.width, root.height
+<ElementCard@MDCard>:
+    radius: '10dp'
+    spacing: '10dp'
+    padding: '10dp'
+    text: ''
+    orientation: 'vertical'
+    border_width: 0
+    ripple_behavior: True
 
-        GridLayout:
-            cols: 2
+<Ui>:
+    MDScreen:
+        name: 'screen_principal'
+        md_bg_color: 0, .5, .5, 1
 
-            Label:
-                text: 'Name:'
+        MDBoxLayout:
+            orientation: 'vertical'
+            
+            MDBoxLayout:
+                size_hint: 1, .2
 
-            TextInput:
-                multiline: False
+            GridLayout:
+                cols: 1
+                size: root.width, root.height
+                padding: '10dp'
 
-            Label:
-                text: 'Surname:'
+                ElementCard:    
+                    size_hint: 1, .8
+                    
+                    Image:
+                        source: '1.jpg'  # Replace with the path to your image
+                        allow_stretch: True
+                        keep_ratio: False
+                        blur: True  # Apply a blur effect to the image
 
-            TextInput:
-                multiline: False
+                GridLayout:
+                    cols: 2
 
-        Button:
-            text:'Submit'
+                    
+
