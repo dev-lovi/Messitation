@@ -7,7 +7,7 @@ from kivymd.uix.screen import MDScreen
 from kivy.uix.screenmanager import ScreenManager
 
 
-
+#day focused in the Uix design
 
 class Ui(ScreenManager):
     pass
