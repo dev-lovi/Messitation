@@ -11,7 +11,7 @@
 <Ui>:
     MDScreen:
         name: 'screen_principal'
-        md_bg_color: 0, .5, .5, 1
+        md_bg_color: 1, 0.956, 0.956, 1
 
         MDBoxLayout:
             orientation: 'vertical'
@@ -19,22 +19,118 @@
             MDBoxLayout:
                 size_hint: 1, .2
 
+
             GridLayout:
                 cols: 1
                 size: root.width, root.height
-                padding: '10dp'
+                padding: ['10dp', '0dp', '10dp', '0dp' ]   
 
                 ElementCard:    
-                    size_hint: 1, .8
+                    size_hint: 1, .5
+                    md_bg_color: 0.41, .5, .23, 1
+
+                    Label:
+                        text: "Messitación 1 - Sentidos"  # Replace with your desired title text
+                        font_size: 20 # Adjust the font size as needed
+                        size_hint: None, None
+                        font_name: "Poppins"
+                        color: .92, .91, .61, 1 
+                        size: self.texture_size
+                        pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
+
                     
                     Image:
-                        source: '1.jpg'  # Replace with the path to your image
+                        source: 'assets/messi_campeon.jpeg'  # Replace with the path to your image
                         allow_stretch: True
                         keep_ratio: False
                         blur: True  # Apply a blur effect to the image
 
+                        
+
                 GridLayout:
                     cols: 2
+                    size: root.width, root.height
+                    padding: ['0dp', '10dp', '0dp', '10dp' ]   
+                    spacing: '10dp'
 
-                    
+
+                #CARTA 1
+                    ElementCard:    
+                        size_hint: 1, 1
+                        md_bg_color: 0.41, .5, .23, 1
+                        
+                        Label:
+                            text: "Respiración"  # Replace with your desired title text
+                            font_size: 16 # Adjust the font size as needed
+                            size_hint: None, None
+                            font_name: "Poppins"
+                            color: .92, .91, .61, 1 
+                            size: self.texture_size
+                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
+
+                        Image:
+                            source: 'assets/messi_barca.jpeg'  # Replace with the path to your image
+                            allow_stretch: True
+                            keep_ratio: False
+
+          
+                #CARTA 2
+                    ElementCard:    
+                        size_hint: 1, 1
+                        md_bg_color: 0.41, .5, .23, 1
+
+                        Label:
+                            text: "El Tiempo"  # Replace with your desired title text
+                            font_size: 16 # Adjust the font size as needed
+                            size_hint: None, None
+                            font_name: "Poppins"
+                            color: .92, .91, .61, 1 
+                            size: self.texture_size
+                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
+
+                        Image:
+                            source: 'assets/dibu.jpeg'  # Replace with the path to your image
+                            allow_stretch: True
+                            keep_ratio: False
+
+
+                #CARTA 3
+                    ElementCard:    
+                        size_hint: 1, 1
+                        md_bg_color: 0.41, .5, .23, 1
+
+                        Label:
+                            text: "Dolor"  # Replace with your desired title text
+                            font_size: 16 # Adjust the font size as needed
+                            size_hint: None, None
+                            font_name: "Poppins"
+                            color: .92, .91, .61, 1 
+                            size: self.texture_size
+                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
+                        
+                        Image:
+                            source: 'assets/messi_sad.jpeg'  # Replace with the path to your image
+                            allow_stretch: True
+                            keep_ratio: False
+
+
+                #CARTA 4
+                    ElementCard:    
+                        size_hint: 1, 1
+                        md_bg_color: 0.41, .5, .23, 1
+
+                        Label:
+                            text: "Pensamientos"  # Replace with your desired title text
+                            font_size: 16 # Adjust the font size as needed
+                            size_hint: None, None
+                            font_name: "Poppins"
+                            color: .92, .91, .61, 1 
+                            size: self.texture_size
+                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
+
+                        Image:
+                            source: 'assets/messi_newells.jpeg'  # Replace with the path to your image
+                            allow_stretch: True
+                            keep_ratio: False
+
 

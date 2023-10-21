@@ -5,7 +5,14 @@ from kivy.uix.widget import Widget
 from kivymd.uix.card import MDCard
 from kivymd.uix.screen import MDScreen
 from kivy.uix.screenmanager import ScreenManager
+from kivy.config import Config
+from kivy.core.window import Window
+from kivy.core.text import LabelBase
 
+LabelBase.register(name="Poppins", fn_regular="assets/Poppins-Bold.ttf")
+Window.size = (360, 640)
+Config.set('graphics', 'width', '360')
+Config.set('graphics', 'height', '740')
 
 #day focused in the Uix design
 
