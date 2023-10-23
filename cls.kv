@@ -1,3 +1,8 @@
+WindowManager:
+    FirstScreen:
+    SentidosScreen:
+
+
 
 <ElementCard@MDCard>:
     radius: '10dp'
@@ -8,9 +13,9 @@
     border_width: 0
     ripple_behavior: True
 
-<Ui>:
+<FirstScreen>:
     MDScreen:
-        name: 'screen_principal'
+        name: 'first_screen'
         md_bg_color: 1, 0.956, 0.956, 1
 
         MDBoxLayout:
@@ -25,9 +30,14 @@
                 size: root.width, root.height
                 padding: ['10dp', '0dp', '10dp', '0dp' ]   
 
+
+
+            #CARTA DE MEDITACION SENTIDOS
                 ElementCard:    
                     size_hint: 1, .5
                     md_bg_color: 0.41, .5, .23, 1
+                    on_release: app.root.current = 'sentidos_screen'
+
 
                     Label:
                         text: "Messitación 1 - Sentidos"  # Replace with your desired title text
@@ -37,15 +47,12 @@
                         color: .92, .91, .61, 1 
                         size: self.texture_size
                         pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
-
-                    
                     Image:
                         source: 'assets/messi_campeon.jpeg'  # Replace with the path to your image
                         allow_stretch: False
                         keep_ratio: True
 
-                        
-
+                
                 GridLayout:
                     cols: 2
                     size: root.width, root.height
@@ -57,7 +64,6 @@
                     ElementCard:    
                         size_hint: 1, 1
                         md_bg_color: 0.41, .5, .23, 1
-                        
                         Label:
                             text: "Respiración"  # Replace with your desired title text
                             font_size: 16 # Adjust the font size as needed
@@ -66,18 +72,17 @@
                             color: .92, .91, .61, 1 
                             size: self.texture_size
                             pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
-
                         Image:
                             source: 'assets/messi_barca.jpeg'  # Replace with the path to your image
                             allow_stretch: False
                             keep_ratio: True
+
 
           
                 #CARTA 2
                     ElementCard:    
                         size_hint: 1, 1
                         md_bg_color: 0.41, .5, .23, 1
-
                         Label:
                             text: "El Tiempo"  # Replace with your desired title text
                             font_size: 16 # Adjust the font size as needed
@@ -86,7 +91,6 @@
                             color: .92, .91, .61, 1 
                             size: self.texture_size
                             pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
-
                         Image:
                             source: 'assets/dibu.jpeg'  # Replace with the path to your image
                             allow_stretch: False
@@ -97,7 +101,6 @@
                     ElementCard:    
                         size_hint: 1, 1
                         md_bg_color: 0.41, .5, .23, 1
-
                         Label:
                             text: "Dolor"  # Replace with your desired title text
                             font_size: 16 # Adjust the font size as needed
@@ -105,9 +108,7 @@
                             font_name: "Poppins"
                             color: .92, .91, .61, 1 
                             size: self.texture_size
-                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
-                        
-
+                            pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed                  
                         Image:
                             source: 'assets/messi_sad.jpeg'  # Replace with the path to your image
                             allow_stretch: False
@@ -118,7 +119,6 @@
                     ElementCard:    
                         size_hint: 1, 1
                         md_bg_color: 0.41, .5, .23, 1
-
                         Label:
                             text: "Pensamientos"  # Replace with your desired title text
                             font_size: 16 # Adjust the font size as needed
@@ -127,10 +127,59 @@
                             color: .92, .91, .61, 1 
                             size: self.texture_size
                             pos_hint: {"left_x": 0.4, "top": 1.0}  # Adjust the position as needed
-
                         Image:
                             source: 'assets/messi_newells.jpeg'  # Replace with the path to your image
                             allow_stretch: False
                             keep_ratio: True
         
                    
+<SentidosScreen>:
+    name: 'sentidos_screen'
+    md_bg_color: 1, 0.956, 0.956, 1
+    #on_enter: root.music()
+
+    BoxLayout:
+        orientation: 'vertical'
+        
+        BoxLayout:
+            size_hint: 1, 0.7
+            padding: ['30dp', '80dp', '30dp', '80dp']
+
+            ElementCard:
+                size_hint: 1, 1
+                md_bg_color: 0.41, .5, .23, 1 #73/255, 89/255, 41/255, 1
+                padding: ['0dp', '0dp', '0dp', '60dp']
+
+                FloatLayout:
+                    size_hint: 1, 1
+                    
+                    Image:
+                        source: 'assets/cover_messi_campeon.jpeg'  # Replace with your image source
+                        size_hint: .65, .65
+                        size: self.texture_size
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+                    Label:
+                        text: "Messitación 1 - Sentidos"  # Replace with your desired title text
+                        font_size: 18 # Adjust the font size as needed
+                        size_hint: None, None
+                        font_name: "Poppins"
+                        color: .92, .91, .61, 1 
+                        size: self.texture_size
+                        pos_hint: {"center_x": 0.5, "top": .15}  # Adjust the position as needed                    
+
+                MDIconButton:
+                    icon: 'play-outline'
+                    theme_text_color: 'Custom'
+                    text_color: 0.41, 0.5, 0.23, 1
+                    md_bg_color: 1, 0.956, 0.956, 1
+                    on_press: root.music()
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    MDIconButton:
+        icon: 'play-outline'
+        theme_text_color: 'Custom'
+        text_color: 0.41, 0.5, 0.23, 1
+        md_bg_color: 1, 0.956, 0.956, 1
+        on_release: app.root.current = 'first_screen'
+        pos_hint: {"center_x": 0.5, "center_y": 0.07}

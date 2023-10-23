@@ -8,23 +8,46 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.config import Config
 from kivy.core.window import Window
 from kivy.core.text import LabelBase
+from kivy.clock import Clock
+from kivy.core.audio import SoundLoader
+
+
 
 LabelBase.register(name="Poppins", fn_regular="assets/Poppins-Bold.ttf")
 Window.size = (360, 640)
+
 Config.set('graphics', 'width', '360')
 Config.set('graphics', 'height', '740')
-
-#day focused in the Uix design
-
-class Ui(ScreenManager):
-    pass
 
 class cls(MDApp):
     def build(self):
         self.theme_cls.theme_style = 'Dark'
         self.theme_cls.primary_palette = 'Teal'
-        Builder.load_file('cls.kv')
-        return Ui()
+        kv = Builder.load_file('cls.kv')
+        return kv
+    
+
+
+#define our different screens
+class FirstScreen(MDScreen):
+    name = 'first_screen'
+    pass
+
+class SentidosScreen(MDScreen):
+    def music(self):
+        sound = SoundLoader.load('example2.wav')
+        if sound:
+            sound.play()
+    
+    
+
+
+class WindowManager(ScreenManager):
+    pass
+
+
+
+        
     
 if __name__ == '__main__':
     cls().run()
