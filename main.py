@@ -34,12 +34,17 @@ class FirstScreen(MDScreen):
     pass
 
 class SentidosScreen(MDScreen):
+    sound = None  # Define a class variable to hold the sound instance
+
     def music(self):
-        sound = SoundLoader.load('example2.wav')
-        if sound:
-            sound.play()
+        if not SentidosScreen.sound:  # If sound is not loaded yet
+            SentidosScreen.sound = SoundLoader.load('example2.wav')
+        if SentidosScreen.sound:
+            SentidosScreen.sound.play()
     
-    
+    def stop_music(self):
+        if SentidosScreen.sound:
+            SentidosScreen.sound.stop()
 
 
 class WindowManager(ScreenManager):
