@@ -33,6 +33,9 @@ class FirstScreen(MDScreen):
     name = 'first_screen'
     pass
 
+
+
+#PANTALLA SENTIDOS
 class SentidosScreen(MDScreen):
     sound = None  # Define a class variable to hold the sound instance
 
@@ -45,6 +48,70 @@ class SentidosScreen(MDScreen):
     def stop_music(self):
         if SentidosScreen.sound:
             SentidosScreen.sound.stop()
+
+#PANTALLA CARTA 1 - DE MEDITACION RESPIRACIÓN
+class RespiracionScreen(MDScreen):
+    sound_1 = None  # Define a class variable to hold the sound instance
+
+    def music(self):
+        if not RespiracionScreen.sound_1:  # If sound is not loaded yet
+            RespiracionScreen.sound_1 = SoundLoader.load('example2.wav')
+        if RespiracionScreen.sound_1:
+            RespiracionScreen.sound_1.play()
+    
+    def stop_music(self):
+        if RespiracionScreen.sound_1:
+            RespiracionScreen.sound_1.stop()
+
+
+
+#PANTALLA CARTA 2 - DE MEDITACION EL TIEMPO
+class ElTiempoScreen(MDScreen):
+    sound_2 = None  # Define a class variable to hold the sound instance
+
+    def music(self):
+        if not ElTiempoScreen.sound_2:  # If sound is not loaded yet
+            ElTiempoScreen.sound_2 = SoundLoader.load('example2.wav')
+        if ElTiempoScreen.sound_2:
+            ElTiempoScreen.sound_2.play()
+    
+    def stop_music(self):
+        if ElTiempoScreen.sound_2:
+            ElTiempoScreen.sound_2.stop()
+
+
+
+#PANTALLA CARTA 3 - DE MEDITACION DOLOR
+class DolorScreen(MDScreen):
+    sound_3 = None  # Define a class variable to hold the sound instance
+
+    def music(self):
+        if not DolorScreen.sound_3:  # If sound is not loaded yet
+            DolorScreen.sound_3 = SoundLoader.load('example2.wav')
+        if DolorScreen.sound_3:
+            DolorScreen.sound_3.play()
+    
+    def stop_music(self):
+        if DolorScreen.sound_3:
+            DolorScreen.sound_3.stop()
+
+
+
+#PANTALLA CARTA 4 - DE MEDITACION PENSAMIENTOS
+class PensamientosScreen(MDScreen):
+    sound_4 = None  # Define a class variable to hold the sound instance
+
+    def music(self):
+        if not PensamientosScreen.sound_4:  # If sound is not loaded yet
+            PensamientosScreen.sound_4 = SoundLoader.load('example2.wav')
+        if PensamientosScreen.sound_4:
+            PensamientosScreen.sound_4.play()
+    
+    def stop_music(self):
+        if PensamientosScreen.sound_4:
+            PensamientosScreen.sound_4.stop()
+
+
 
 
 class WindowManager(ScreenManager):
