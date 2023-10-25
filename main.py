@@ -55,7 +55,7 @@ class RespiracionScreen(MDScreen):
 
     def music(self):
         if not RespiracionScreen.sound_1:  # If sound is not loaded yet
-            RespiracionScreen.sound_1 = SoundLoader.load('example2.wav')
+            RespiracionScreen.sound_1 = SoundLoader.load('test.wav')
         if RespiracionScreen.sound_1:
             RespiracionScreen.sound_1.play()
     
