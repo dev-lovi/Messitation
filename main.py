@@ -63,7 +63,7 @@ class RespiracionScreen(MDScreen):
         if RespiracionScreen.sound_1:
             RespiracionScreen.sound_1.stop()
 
-
+#day for testing
 
 #PANTALLA CARTA 2 - DE MEDITACION EL TIEMPO
 class ElTiempoScreen(MDScreen):
