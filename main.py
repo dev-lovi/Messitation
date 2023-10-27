@@ -41,7 +41,7 @@ class SentidosScreen(MDScreen):
 
     def music(self):
         if not SentidosScreen.sound:  # If sound is not loaded yet
-            SentidosScreen.sound = SoundLoader.load('example2.wav')
+            SentidosScreen.sound = SoundLoader.load('assets/audio/sentidos.mp3')
         if SentidosScreen.sound:
             SentidosScreen.sound.play()
     
